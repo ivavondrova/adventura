@@ -58,7 +58,7 @@ public class Start extends Application
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		FXMLLoader loader = new FXMLLoader();
-    	loader.setLocation(getClass().getResource("../ui/MainWindow.fxml"));    	
+    	loader.setLocation(getClass().getResource("../uiText/MainWindow.fxml"));    	
     	Parent root = loader.load();
 
     	HomeController controller = loader.getController();

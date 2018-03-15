@@ -1,5 +1,6 @@
 package com.github.ivavondrova.adventura.logika;
 
+import java.util.Observable;
 
 /**
  *  Class HerniPlan - třída představující mapu a stav adventury.
@@ -12,7 +13,7 @@ package com.github.ivavondrova.adventura.logika;
  *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Alena Buchalcevova
  *@version    z kurzu 4IT101 pro školní rok 2014/2015
  */
-public class HerniPlan {
+public class HerniPlan extends Observable {
     
     private Prostor aktualniProstor;
     private Prostor viteznyProstor;
@@ -70,6 +71,8 @@ public class HerniPlan {
      */
     public void setAktualniProstor(Prostor prostor) {
        aktualniProstor = prostor;
+       this.setChanged();
+       this.notifyObservers();
     }
     /**
      *  Metoda vrací odkaz na vítězný prostor.

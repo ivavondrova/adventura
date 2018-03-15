@@ -35,7 +35,7 @@ public class Prostor {
     public Prostor(String nazev, String popis) {
         this.nazev = nazev;
         this.popis = popis;
-        vychody = new HashSet<Prostor>();
+        vychody = new HashSet<>();
         seznamVeci = new HashMap<String, Vec>();
     }
 
@@ -178,7 +178,6 @@ public class Prostor {
     }
      /**
      * Vrací řetězec názvů věcí, které jsou v prostoru
-
      *@return            řetězec názvů
      */
     public String nazvyVeci () {
@@ -190,7 +189,6 @@ public class Prostor {
     }
      /**
      * Hledá věc daného jména a pokud je v prostoru a je přenositelná, tak ji vrátí a vymaže ze seznamu
-
      *@param  jmeno   Jméno věci
      *@return            věc nebo
      *                   hodnota null, pokud tam věc daného jména není a nebo není přenositelná
@@ -207,5 +205,11 @@ public class Prostor {
             }
         }
         return nalezenaVec;
+    }
+    
+
+    @Override
+    public String toString() {
+    	return getNazev();
     }
 }
